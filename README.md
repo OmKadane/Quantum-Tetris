@@ -16,8 +16,8 @@ Enjoy classic gameplay with a quantum twist, smooth controls, and a beautiful UI
 ## 🎮 Screenshots
 
 <p align="center">
-  <img src="assets/screenshot1.png" width="300" alt="Quantum Tetris Screenshot 1"/><br>
-  <img src="assets/screenshot2.png" width="300" alt="Quantum Tetris Screenshot 2"/>
+  <img src="assets/screenshot1.png" width="80%" alt="Quantum Tetris Screenshot 1"/><br>
+  <img src="assets/screenshot2.png" width="80%" alt="Quantum Tetris Screenshot 2"/>
 </p>
 
 ---
