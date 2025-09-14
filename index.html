@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Tetris Game</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="game-title">🧩Quantum Tetris🧩</h1>
+  <div id="tetris">
+    <div id="info">
+      <div id="next_shape"></div>
+      <p id="level">Level: <span>1</span></p>
+      <p id="lines">Lines: <span>0</span></p>
+      <p id="score">Score: <span>0</span></p>
+      <p id="time">Time: <span>0</span></p>
+      <div id="high-scores">
+        <p>High Score:</p>
+        <ul id="high-scores-list"></ul>
+      </div>
+      <button id="start" aria-label="Start Tetris Game">Start</button>
+      <button id="reset" aria-label="Reset Tetris Game" style="display: none;">Reset</button>
+      <button id="settings" aria-label="Open Settings">Settings</button>
+    </div>
+    <canvas id="canvas" width="200" height="440"></canvas>
+  </div>
+
+  <div id="settings-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Settings</h2>
+      <label for="game-speed">Game Speed (ms per move):</label>
+      <input type="number" id="game-speed" min="100" max="2000" value="700">
+      <h3>Key Bindings</h3>
+      <div class="key-binding">
+        <label>Move Left:</label>
+        <button class="key-btn" data-action="left">ArrowLeft</button>
+      </div>
+      <div class="key-binding">
+        <label>Move Right:</label>
+        <button class="key-btn" data-action="right">ArrowRight</button>
+      </div>
+      <div class="key-binding">
+        <label>Move Down:</label>
+        <button class="key-btn" data-action="down">ArrowDown</button>
+      </div>
+      <div class="key-binding">
+        <label>Rotate:</label>
+        <button class="key-btn" data-action="rotate">ArrowUp</button>
+      </div>
+      <div class="key-binding">
+        <label>Pause:</label>
+        <button class="key-btn" data-action="pause">Escape</button>
+      </div>
+      <button id="save-settings">Save</button>
+      <button id="close-settings">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

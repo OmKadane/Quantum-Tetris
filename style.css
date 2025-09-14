@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(45deg, #000000, #1a1a1a, #2d2d2d, #000000);
+    background-size: 400% 400%;
+    animation: gradientFlow 8s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    gap: 20px;
+  }
+
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  #tetris {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    background: #fff;
+  }
+  
+  #canvas {
+    width: 200px;
+    height: 440px;
+    background-color: #000;
+    border: 2px solid #fff;
+  }
+  
+  #info {
+    background-color: #000;
+    color: #fff;
+    width: 130px;
+    height: 440px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid #fff;
+  }
+
+  #game-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+  }
+  
+  #next_shape {
+    width: 110px;
+    height: 110px;
+    background-color: #000;
+    border: 1px solid white;
+  }
+  
+  #next_shape canvas {
+    display: block;
+  }
+  
+  #high-scores {
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  #high-scores-list {
+    list-style: none;
+    margin-top: 5px;
+  }
+  
+  #high-scores-list li {
+    margin-bottom: 5px;
+  }
+  
+  #start, #reset, #settings {
+    background: #e1ff5f;
+    border-radius: 2px;
+    color: #202020;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #settings {
+    margin-top: 10px;
+  }
+
+  #start:hover, #reset:hover, #settings:hover {
+    background: #d4f542;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(225, 255, 95, 0.4);
+    transform: translateY(-1px);
+  }
+
+  #start:active, #reset:active, #settings:active {
+    background: #c7e83a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 20px rgba(225, 255, 95, 0.6);
+    transform: translateY(0px);
+  }
+  
+  .red {
+    color: #f00000;
+  }
+  
+  /* Game over/pause overlay */
+  #canvas.paused::after, #canvas.game-over::after {
+    content: "PAUSED";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 30px;
+    font-family: Arial, sans-serif;
+  }
+  
+  #canvas.game-over::after {
+    content: "GAME OVER";
+  }
+  
+  /* Settings Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .modal-content label {
+    margin-right: 10px;
+  }
+  
+  .modal-content input, .modal-content button {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .key-binding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .key-btn {
+    background: #ddd;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .key-btn:hover {
+    background: #bbb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(187, 187, 187, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .key-btn:active {
+    background: #aaa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(0px);
+  }
+  
+  #save-settings, #close-settings {
+    background: #e1ff5f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #save-settings:hover, #close-settings:hover {
+    background: #d4f542;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 15px rgba(225, 255, 95, 0.4);
+    transform: translateY(-1px);
+  }
+
+  #save-settings:active, #close-settings:active {
+    background: #c7e83a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 20px rgba(225, 255, 95, 0.6);
+    transform: translateY(0px);
+  }
+
+  #game-over-overlay button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  #game-over-overlay button:hover {
+    background: #f0f0f0;
+  }
+
+#reset-settings {
+  background: #e1ff5f;
+  border-radius: 2px;
+  color: #202020;
+  cursor: pointer;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin: 0 0 10px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: block;
+  text-align: center;
+  font-family: inherit;
+  font-weight: normal;
+}
+#reset-settings:hover {
+  background: #d4f542;
+}
+#reset-settings:active {
+  background: #c7e83a;
+}
