@@ -48,7 +48,7 @@ jobs:
           service: '${{ env.SERVICE_NAME }}'
           region: '${{ env.GAR_LOCATION }}'
           image: '${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}'
-          flags: '--allow-unauthenticated'
+          flags: '--port=80 --allow-unauthenticated'
 
       - name: Show Deployed URL
         run: echo "The game is deployed at ${{ steps.deploy.outputs.url }}"
