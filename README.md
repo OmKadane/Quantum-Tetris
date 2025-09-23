@@ -20,7 +20,7 @@ This project is configured with a fully automated CI/CD pipeline using **GitHub 
     2.  Pushed to a secure Google Artifact Registry.
     3.  Automatically deployed to Google Cloud Run for hosting.
 
-**Live Staging URL:** [https://quantum-tetris-dcrkhjsq6a-uc.a.run.app](https://quantum-tetris-dcrkhjsq6a-uc.a.run.app)
+**Live Staging URL:** [quantum_tetris](https://quantum-tetris-dnztkjg54q-uc.a.run.app/)
 
 ---
 
