@@ -1,0 +1,25 @@
+{
+  "name": "quantum-tetris",
+  "version": "1.0.0",
+  "description": "[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square)](https://developer.mozilla.org/docs/Web/HTML) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square)](https://developer.mozilla.org/docs/Web/CSS) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=222&style=flat-square)](https://developer.mozilla.org/docs/Web/JavaScript) [![GitHub Repo stars](https://img.shields.io/github/stars/OmKadane/Quantum-Tetris?style=social)](https://github.com/OmKadane/Quantum-Tetris/stargazers) [![GitHub forks](https://img.shields.io/github/forks/OmKadane/Quantum-Tetris?style=social)](https://github.com/OmKadane/Quantum-Tetris/network/members)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmKadane/Quantum-Tetris.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmKadane/Quantum-Tetris/issues"
+  },
+  "homepage": "https://github.com/OmKadane/Quantum-Tetris#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "globals": "^16.4.0"
+  }
+}
